@@ -66,3 +66,18 @@ var arr1 = [10,20,30,40,50];
 var arr2 = [60,70];
 var arr3 = [...arr1,...arr2];
 console.log(arr3) // [10,20,30,40,50,60,70]
+
+//-----------------------------------------------------------------------------------------------
+
+var obj1 = {
+    name : "Harsh",
+    course : "Btech"
+};
+
+var obj2 = {
+    age:25
+};
+
+var obj3 = {...obj1 , ...obj2};
+
+console.log(obj3);    // { name: 'Harsh', course: 'Btech', age: 25 }
