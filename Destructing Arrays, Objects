@@ -1,0 +1,21 @@
+// Destructing Arrays.
+
+let arr = ["Harsh" , 22 , "Indore"];
+let [name,age,location] = arr;
+console.log(name)  // Harsh
+
+
+let user = ["Harsh Sharma",22,"Indore"];
+let[fullName , ...args] = user;
+console.log(fullName); //    Harsh Sharma
+console.log(args);  //      [ 22, 'Indore' ]
+
+// Destructing Objects
+
+let books = {
+    bookName : "IOT",
+    Id : 1224
+};
+
+let{bookName,Id} = books;   // Name should be same .
+console.log(bookName); // IOT
