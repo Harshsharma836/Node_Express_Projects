@@ -1,0 +1,40 @@
+let name = "Harsh";
+let course = "Btech";
+
+var obj = {   
+    name : name,
+    course : course  
+}
+console.log(obj);
+console.log(obj.course) // Btech
+
+
+//----------------------------------------------------------------------------------
+
+
+// use variable as a property Name
+let n = "name";
+var obj2 = {
+    [n] : "Harsh",
+    course : "Btech",
+    detail : function(){
+        return `The ${this.name} enrolled in the course ${this.course}`;
+    }
+}
+console.log(obj2);
+console.log(obj2.detail());  // The Harsh enrolled in the course Btech
+
+
+//--------------------------------------------------------------------------------------
+
+// We can return object from Function.
+
+let fullName = "Harsh";
+let branch = "Computer Science";
+
+let student = (fullName,branch) =>{
+    return {fullName,branch};
+}
+console.log(student(fullName,branch));
+
+//--------------------------------------------------------------------------------------
