@@ -1,1 +1,36 @@
+// Simple Functions
+function multiply(a,b){
+    return a*b;
+}
+function operation(a,b,operator){
+    return operator(a,b);
+}
+console.log(operation(20,30,multiply));
+
+function hello(){
+    console.log("Hello");
+}
+
+let hello = function(){
+    console.log("Hello");
+}
+
+// Arrow Function
+
+let hello = () => console.log("Hello");
+hello();
+
+///////////////////////////////////////
+
+let welcome = (name) =>{
+    console.log(`Hello ${name} `);
+}
+welcome("Harsh");
+
+
+///////////////////////////////////////
+
+let welcome = (name,age) => `Welcome ${name} - ${age}`;
+console.log(welcome("Harsh",22));
+
 
