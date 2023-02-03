@@ -1,0 +1,15 @@
+// Simple String 
+
+// let user = "Harsh";
+// let greet = "Hello " + user;
+// console.log(b);
+
+// Template String or Template Literals
+
+let user = "Harsh";
+let greet = `Hello ${user}`;
+console.log(greet)
+
+let user = "Harsh";
+let marks = 350;
+console.log(`Hello ${user } your marks is ${marks}`) 
