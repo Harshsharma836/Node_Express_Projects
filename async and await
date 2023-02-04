@@ -1,0 +1,40 @@
+//  async and await make promises easier to write
+//  async makes a function return a Promise
+//  await makes a function wait for a Promise
+
+// async :
+
+async function test(){  // Return Promise 
+    return "Hello";
+}
+
+test().then(() => {
+    console.log("how are you")
+});
+
+console.log(test());   // Promise { 'Hello' }
+
+
+//-----------------------------------------------------
+
+let a = async ()=>{
+    return "Arrow Function";
+}
+a().then((result) =>{
+    console.log(result);   // Arrow Function
+});
+
+//----------------------------------------------------------------------------------------------
+
+// await :
+
+async function sum(){
+    console.log("A");
+    await console.log("B");   
+    console.log("c");
+}
+sum();
+console.log("D");
+console.log("E");
+
+// Output :  A B D E C
