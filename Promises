@@ -1,0 +1,21 @@
+// Promise :
+
+let complete = true;
+
+let prom = new Promise(function(resolve , reject){
+  if(complete){
+    resolve("I am successfull.");
+  }
+  else{
+    reject("I am failed");
+  }
+}) ;
+
+let onFulfilment = (result) =>{ console.log(result)}
+let onRejection = (error) =>{ console.log(error)}
+
+console.log(prom );   // Promise { 'I am successfull.' }
+
+// This are inbuilt function of Promises
+prom.then(onFulfilment);   // I am successfull.
+prom.catch(onRejection);   
