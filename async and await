@@ -15,7 +15,7 @@ test().then(() => {
 console.log(test());   // Promise { 'Hello' }
 
 
-//-----------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 let a = async ()=>{
     return "Arrow Function";
@@ -38,3 +38,15 @@ console.log("D");
 console.log("E");
 
 // Output :  A B D E C
+
+
+
+//-------------------------------------------------------------------------------------------------
+
+const axios = require("axios");
+
+const fetchData = async ()=>{
+    const data = await axios.get("http://cat-facts.herokuapp.com/facts");
+    console.log(data);
+};
+fetchData();
