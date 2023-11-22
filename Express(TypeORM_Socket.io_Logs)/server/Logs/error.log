@@ -1,0 +1,4 @@
+{"@fields":{"level":"error"},"@message":"Error Occur on Error","@timestamp":"2023-11-10T11:34:11.399Z"}
+{"@fields":{"level":"error"},"@message":"Error Occur on Error","@timestamp":"2023-11-10T11:34:43.871Z"}
+{"@fields":{"level":"error"},"@message":"Error Occur 'error' route hit","@timestamp":"2023-11-10T12:01:48.430Z"}
+{"@fields":{"level":"error"},"@message":"Error Occur 'error' route hit","@timestamp":"2023-11-10T12:02:00.508Z"}

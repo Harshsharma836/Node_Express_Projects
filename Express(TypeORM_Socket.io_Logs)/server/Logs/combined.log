@@ -1,0 +1,9 @@
+2023-11-10T06:41:51.604Z info: Hello from logger , Home Route Hit
+2023-11-10T11:33:20.785Z info: Hello from logger , Home Route Hit
+2023-11-10T11:33:57.356Z info: Hello from logger , Home Route Hit
+2023-11-10T11:34:11.399Z error: Error Occur on Error
+2023-11-10T11:34:43.871Z error: Error Occur on Error
+2023-11-10T12:01:48.430Z error: Error Occur 'error' route hit
+2023-11-10T12:02:00.508Z error: Error Occur 'error' route hit
+2023-11-21T06:15:30.740Z info: Hello from logger , Home Route Hit
+2023-11-21T06:16:30.640Z info: Hello from logger , Home Route Hit

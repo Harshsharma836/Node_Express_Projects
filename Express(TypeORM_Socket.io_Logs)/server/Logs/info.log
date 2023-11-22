@@ -1,0 +1,9 @@
+{"level":"info","message":"Hello from logger , Home Route Hit","timestamp":"2023-11-10T06:41:51.604Z"}
+{"level":"info","message":"Hello from logger , Home Route Hit","timestamp":"2023-11-10T11:33:20.785Z"}
+{"level":"info","message":"Hello from logger , Home Route Hit","timestamp":"2023-11-10T11:33:57.356Z"}
+{"level":"error","message":"Error Occur on Error","timestamp":"2023-11-10T11:34:11.399Z"}
+{"level":"error","message":"Error Occur on Error","timestamp":"2023-11-10T11:34:43.871Z"}
+{"level":"error","message":"Error Occur 'error' route hit","timestamp":"2023-11-10T12:01:48.430Z"}
+{"level":"error","message":"Error Occur 'error' route hit","timestamp":"2023-11-10T12:02:00.508Z"}
+{"level":"info","message":"Hello from logger , Home Route Hit","timestamp":"2023-11-21T06:15:30.740Z"}
+{"level":"info","message":"Hello from logger , Home Route Hit","timestamp":"2023-11-21T06:16:30.640Z"}
