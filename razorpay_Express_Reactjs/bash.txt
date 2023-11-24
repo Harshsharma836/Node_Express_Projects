@@ -1,0 +1,24 @@
+It will run and output today date. And then we have to enter path and it list all files in that.
+
+#i/bin/bash
+echo "Today is" `date`
+echo -e "\n enter the path to directory"
+read the_path
+echo -e "\n you path has files"
+ls $the_path
+~              
+
+------------------------------------------------------------------------------------------
+// To run bash script file
+
+You can run the script using any of the mentioned methods:
+sh run_all.sh
+bash run_all.sh
+./run_all.sh
+
+------------------------------------------------------------------------------------------
+
+We can read the user input using the read command.
+
+>  operator overwrites the file.
+>> append text at last of the file

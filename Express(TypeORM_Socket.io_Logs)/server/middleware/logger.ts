@@ -15,13 +15,20 @@ const logger = winston.createLogger({
             level : 'error',
             format : winston.format.logstash()
         }),
-
+        
         new winston.transports.File(
         {
-            filename : 'Logs/info.log',
-            level : 'info',
+            filename : 'Logs/info.warn',
+            level : 'warn',
             format : winston.format.json()
         }),
+
+        new winston.transports.File(
+            {
+                filename : 'Logs/info',
+                level : 'info',
+                format : winston.format.json()
+            }),
         new winston.transports.File({ filename: "Logs/combined.log" }),
         // Log everything to the console in a simple format
         new winston.transports.Console({ format: winston.format.simple() }),

@@ -1,4 +1,6 @@
+
 import { DataSource } from 'typeorm';
+// import { query , error} from 'winston';
 
 const dataSource = new DataSource({
   type: 'mysql',
@@ -8,11 +10,13 @@ const dataSource = new DataSource({
   password: 'harsh', // The password you created when running docker command.
   database: 'User',
   synchronize: true,
-  entities: ["entity/*.ts"],
+  entities: ["entity/**.ts"],
  migrations: [/*...*/],
  migrationsTableName: "custom_migration_table",
+//  logging : ["query" , "error"],
+//  maxQueryExecutionTime : 10000,
 });
-
+// typeorm migration:create /src/migrations/PostRefactoring
 dataSource.initialize().then(() => console.log('connected to DB succesfully!')).catch((err)=> console.log(err));
 
 export default dataSource;
