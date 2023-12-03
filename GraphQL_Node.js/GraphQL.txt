@@ -1,0 +1,25 @@
+REST API
+
+Endpoints
+pole.com/api/pokemon
+pole.com/api/pokemon/123
+
+Drawbacks :
+Over Fetching 
+Under Fetch: When we want data from multiple endpoints.
+
+In Rest api we create Routes.
+But in GraphQL we make Schema. We have to give Resolver and TypeDefs are compulsory
+
+If we want to fetch something from GraphQL Server: Query
+If we want to send something to the GraphQL Server: Mutation
+
+
+// Setup Apollo Server on Backend  
+Url: https://www.apollographql.com/docs/apollo-server/getting-started/
+npm install @apollo/server graphql
+
+// Setup Apollo Client on Frontend
+Url: https://www.apollographql.com/docs/react/get-started
+npm install @apollo/client graphql
+
