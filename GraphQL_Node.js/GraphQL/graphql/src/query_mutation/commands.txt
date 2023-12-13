@@ -1,0 +1,45 @@
+query ExampleAnything($userId: ID!, $toDoWant: Boolean! ) {
+  user(userId : $userId) {
+    userId
+    name
+    todos @include(if: $toDoWant){ 
+      todoId
+      task
+    } 
+  }
+
+  Address(id : $userId) {
+   city
+   country
+   authorId
+ }
+}
+
+mutation($name : String, $age : Int){
+  addUser(name : $name , age : $age) {
+    name : name,
+    age : age
+  }
+}
+
+
+# query {
+#   user(userId: "1") {
+#     userId
+#     name
+#     todos {
+#       todoId
+#       task
+#     }
+#   }
+# }
+
+
+// Variables
+
+{
+  "userId": 2,
+  "name" : "harsh",
+  "age": 21,
+  "toDoWant": true
+}
