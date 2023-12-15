@@ -15,11 +15,13 @@ model User {
   email    String @unique
   password String
   name     String
-  toDO     ToDO[]
+  ToDO     ToDO[]
 }
 
 model ToDO {
   id     Int  @id @default(autoincrement())
   user   User @relation(fields: [userId], references: [id])
   userId Int
+  task String
 }
+

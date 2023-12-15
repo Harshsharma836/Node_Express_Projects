@@ -1,19 +1,8 @@
 import { PrismaClient , Prisma } from "@prisma/client";
-import { users } from "../data/data";
+// import { users } from "../data/data";
 import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
-
-// for testing purpose 
-export const addUser =(parent : any , args : any , context : any)=>{
-    const newUser = {
-      userId : ""+users.length+1,
-      name : args.name,
-      age : args.age
-    }
-    users.push(newUser);
-    return newUser;
-  }
 
 export async function signup(parent : any, args : any, context : any) {
     try{
@@ -38,7 +27,6 @@ export async function signup(parent : any, args : any, context : any) {
         throw new Error('No such user found')
       }
       const token = jwt.sign({ userId: user.id }, "SECRET")
-  
       return {
         token,
         user,
@@ -47,11 +35,23 @@ export async function signup(parent : any, args : any, context : any) {
     catch(err){
       console.log(err)
     }
-  
-    // const valid = await bcrypt.compare(args.password, user.password)
-    // if (!valid) {
-    //   throw new Error('Invalid password')
-    // }
+  }
 
+  export const addToDO = async(parent : any , args : any , context : any) =>{
+    try{
+      if(!context.user){
+        throw new Error(`UnAuthorized Access `)
+      }
+      const userid = context.user.userId;
+      
+      args.userId = userid;
+      const toDO = await prisma.toDO.create({
+        data : args
+      })
+      return toDO;
+    }
+    catch(error){
+      console.log(error)
+    }
   }
   

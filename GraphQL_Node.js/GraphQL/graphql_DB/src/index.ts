@@ -2,11 +2,14 @@ import express, { Express, Request, Response , Application } from 'express';
 import dotenv from 'dotenv';
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import {  Address , users , todos } from './data/data';
+// import {  Address , users , todos } from './data/data';
 import { typeDefs } from './schema';
-import { addUser, login, signup } from './resolvers/mutations';
-import { user } from './resolvers/query';
+// import { addUser, login, signup } from './resolvers/mutations';
+import {  addToDO , login , signup } from './resolvers/mutations';
+import {  ToDO, user } from './resolvers/query';
 import { Prisma } from '@prisma/client';
+import { getUser } from './middleware/auth.middleware';
+import { GraphQLError } from 'graphql';
 
 //For env File 
 dotenv.config();
@@ -17,18 +20,15 @@ dotenv.config();
 
 const resolvers = {
     Query : {
-        Address : () => {return Address},
         user
     },
     User: {
-      todos: (user : any) => {
-        return todos.filter(todo => todo.userId === user.userId);
-      },
+      ToDO
     },
     Mutation : {
-      addUser,
       signup,
-      login
+      login,
+      addToDO
     }
 }
 
@@ -41,13 +41,25 @@ const server = new ApolloServer<myContext>({
     resolvers,
 })
 
+// const link = createHttpLink({
+//   uri: '/graphql',
+//   credentials: 'same-origin'
+// });
+
 async function startServer(){
     const { url } = await startStandaloneServer(server, {
         listen: { port: 4006 },
-        // context is to pass data from req
-        context: async ({ req, res }) => ({
-          authScope: (req.headers.authorization),
-        }),
+        
+        context: async ({ req, res }) => {
+          const token = req.headers.authorization || '';
+          if(token === '') return {msg : "Token Required"}
+          // Verifying the token .
+          const user = await getUser(token);
+          if(!user){
+             throw new Error('UnAuthorized')
+          }
+          return { user };
+        },
     });
     console.log(`Server Running on Port : 4006`)
 }

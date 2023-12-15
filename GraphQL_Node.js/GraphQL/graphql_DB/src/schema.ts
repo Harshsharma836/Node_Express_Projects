@@ -1,3 +1,5 @@
+
+
 export const typeDefs = `#graphql
    
     type Address {
@@ -6,17 +8,25 @@ export const typeDefs = `#graphql
         country : String
     }
 
-    type User {
-      userId: ID!
+    interface UserInt {
+      id : ID,
+      name : String,
+      email : String,
+      password : String
+      ToDO : [ToDO]
+    }
+
+    type User implements UserInt {
+      id: ID!
       name: String!
       email : String!
       password : String!
-      todos: [Todo]
+      ToDO : [ToDO]
     }
 
-    type Todo {
-      todoId: ID!
-      userId: ID!
+    type ToDO {
+      id: ID!
+      userId : ID!
       task: String!
     }
 
@@ -26,14 +36,13 @@ export const typeDefs = `#graphql
     }
 
     type Mutation {
-      addUser(name : String , age : Int) : User
-
       signup(email : String , password : String , name : String ) : AuthPayLoad
       login(email : String , password : String ) : AuthPayLoad
+      addToDO(userId : Int , task : String) : ToDO
     }
 
     type Query {
         Address(id : ID) : [Address]
-        user(userId: ID!): User
+        user(userId: ID! offSet : Int , limit : Int): User
     }
 `
